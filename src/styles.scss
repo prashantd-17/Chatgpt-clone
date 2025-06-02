@@ -1,1 +1,199 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// html, body {
+//   height: 100%;
+//   overflow-x: hidden;
+//   line-height: 1;
+// }
+
 /* You can add global styles to this file, and also import other style files */
+.d-flex{
+    display: flex;
+}
+
+.d-block{
+    display: block
+}
+
+.flex-col{
+    flex-direction: column;
+}
+
+.jcc{
+    justify-content: center;
+}
+
+.jcb{
+    justify-content: space-between;
+}
+
+.jcs{
+    justify-content: flex-start;
+}
+
+.jce{
+    justify-content: flex-end;
+}
+
+.aic{
+    align-items: center;
+}
+
+.gap-5{
+    gap: 5px;
+}
+
+.gap-10{
+    gap: 10px;
+}
+
+.gap-12{
+    gap: 12px;
+}
+
+.gap-20{
+    gap: 20px;
+}
+
+.p-5{
+    padding: 5px;
+}
+
+.p-10{
+    padding: 10px;
+}
+
+.p-15{
+    padding: 15px;
+}
+
+.p-20{
+    padding: 20px;
+}
+
+.p-30{
+    padding: 30px;
+}
+
+.w-15{
+    width: 15%;
+}
+
+.w-18{
+    width: 18%;
+}
+
+.w-25{
+    width: 25%;
+}
+
+.w-50{
+    width: 50%;
+}
+
+.w-75{
+    width: 75%;
+}
+
+.w-100{
+    width: 100%;
+}
+
+.h-100{
+    height: 100%;
+}
+
+
+// main bg - #212121
+// inner - 303030 input
+//side - #171717
+//border - #ffffff26
+
+/* Light Theme */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --sidenav-bg: #f5f5f5;
+  --input-bg: #ffffff;
+  --primary-color: #1976d2;
+  --input-border: #e0e0e0;
+  --inverse : #ffffff
+}
+
+/* Dark Theme */
+.dark-mode {
+  --bg-color: #1e1e1e;
+  --text-color: #ffffff;
+  --sidenav-bg: #121212;
+  --input-bg: #333333;
+  --primary-color: #90caf9;
+  --input-border: transparent;
+  --inverse : #000000
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    margin: 0px;
+}
+
+.container {
+  background-color: var(--bg-color);
+}
+
+.input-container {
+  background-color: var(--input-bg) !important;
+    border: 1px solid var(--input-border);
+}
+
+.sidenav {
+  background-color: var(--sidenav-bg);
+}
+
+@mixin btn{
+    border: none;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 50px;
+    height: 45px;
+    color: var(--text-color)
+}
+
+.hover-btn{
+    @include btn;
+}
+
+.hover-btn > svg{
+    color: var(--text-color);
+}
+
+.hover-btn:hover{
+    background-color: #454545;
+    transition: background-color 0.5 ease-in-out;
+}
+
+.voice-btn{
+    @include btn;
+    background-color: var(--text-color);
+    color: var(--inverse);
+}
+
+.fs-14{
+    font-size: 14px;
+}
+
+.fs-15{
+    font-size: 15px;
+}
+
+.fs-17{
+    font-size: 17px;
+}

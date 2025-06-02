@@ -1,0 +1,17 @@
+.main-container{
+    display: flex;
+    width: 100%;
+}
+
+.w-85{
+    width: 85%;
+}
+
+.ht-100{
+    height: 99vh;
+}
+
+.grow {
+  flex: 1 1 auto; /* grow and shrink as needed */
+  overflow: auto; /* optional: scroll if content is big */
+}

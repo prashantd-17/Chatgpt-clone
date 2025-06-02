@@ -1,0 +1,13 @@
+.side-list{
+    text-decoration: none;
+    list-style-type: none;
+    padding-left: 0px;
+    margin: 0px;
+    gap: 15px;
+}
+
+.side-list > li{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}

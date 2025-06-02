@@ -1,0 +1,19 @@
+.share-btn{
+    background-color: transparent;
+    border: 1px solid #ffffff26;
+    padding: 10px;
+    border-radius: 30px;
+    color: var(--text-color);
+}
+
+.share-btn:hover{
+    background-color: #454545;
+}
+
+.plan-dropdown > select{
+    border: none;
+    background: none;
+    font-size: 22px;
+    width: 113px;
+    color: var(--text-color);
+}
