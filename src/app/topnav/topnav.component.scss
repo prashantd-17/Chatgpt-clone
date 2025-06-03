@@ -10,10 +10,24 @@
     background-color: #454545;
 }
 
-.plan-dropdown > select{
+.plan-dropdown {
     border: none;
     background: none;
     font-size: 22px;
     width: 113px;
     color: var(--text-color);
+    // appearance: none;
+}
+
+/* Optional: On focus */
+.plan-dropdown:focus {
+  outline: none;
+}
+
+.plan-dropdown option {
+    background: var(--input-bg);
+  color: var(--text-color);
+  border-radius: 20px;
+  border: none;
+  font-size: 13px;
 }
