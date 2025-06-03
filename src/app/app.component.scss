@@ -25,7 +25,7 @@
 }
 
 .sidenav {
-  width: 21%;
+  width: 17%;
   transition: width 0.3s ease;
 }
 
@@ -39,4 +39,8 @@
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
+}
+
+.grow-1{
+  flex-grow: 1;
 }
