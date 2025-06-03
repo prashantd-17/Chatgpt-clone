@@ -116,17 +116,6 @@
 
 /* Light Theme */
 :root {
-  --bg-color: #ffffff;
-  --text-color: #000000;
-  --sidenav-bg: #f5f5f5;
-  --input-bg: #ffffff;
-  --primary-color: #1976d2;
-  --input-border: #e0e0e0;
-  --inverse : #ffffff
-}
-
-/* Dark Theme */
-.dark-mode {
   --bg-color: #1e1e1e;
   --text-color: #ffffff;
   --sidenav-bg: #121212;
@@ -134,6 +123,18 @@
   --primary-color: #90caf9;
   --input-border: transparent;
   --inverse : #000000
+}
+
+/* Dark Theme */
+.dark-mode {
+      --bg-color: #ffffff;
+  --text-color: #000000;
+  --sidenav-bg: #f5f5f5;
+  --input-bg: #ffffff;
+  --primary-color: #1976d2;
+  --input-border: #e0e0e0;
+  --inverse : #ffffff
+
 }
 
 body {
