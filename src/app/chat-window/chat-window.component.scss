@@ -33,6 +33,7 @@ input:focus {
     height: 77vh;
     overflow: auto;
     gap: 20px;
+    width: 100%;
 }
 
 @mixin message-style {
@@ -83,6 +84,8 @@ input:focus {
     gap: 5px;
     align-items: center;
     height: 20px;
+    width: 46%;
+    margin-bottom: 20px;
 }
 
 .loader span {
@@ -138,4 +141,8 @@ input:focus {
     align-items: center;
     justify-content: center;
     font-size: 11px;
+}
+
+.assistant:last-child{
+    margin-bottom: 300px;
 }
