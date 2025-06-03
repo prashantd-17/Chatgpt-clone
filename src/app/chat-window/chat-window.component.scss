@@ -1,22 +1,18 @@
-.chat-container{
+.chat-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.input-container{
+.input-container {
     padding: 10px;
     border-radius: 30px;
-    // background-color: #303030;
-    // background-color: antiquewhite;
-    width: 65%;
-    // border-color: #0d0d0d0d;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08); // soft subtle shadow
-
-
+    width: 50%;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
-input{
+
+input {
     border: none;
     background-color: transparent;
     font-size: 16px;
@@ -26,22 +22,20 @@ input{
     color: var(--text-color);
 }
 
-input:focus{
+input:focus {
     outline: none;
 }
 
-// /* chat.component.css */
 .chat-window {
-  height: 50vh;
-  width: 100%;
-  padding: 0px 13rem;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 77vh;
+    overflow: auto;
+    gap: 20px;
 }
 
-@mixin message-style{
+@mixin message-style {
     width: max-content;
     border-radius: 20px;
     text-align: left;
@@ -63,23 +57,85 @@ input:focus{
     display: flex;
     flex-direction: column;
     gap: 12px;
-    width: 100%;
+    width: 50%;
 }
 
-.assistant > p {
+.assistant>p {
     margin-bottom: 10px;
 }
 
-.assistant pre{
+.assistant pre {
     border: 1px solid white !important;
     padding: 10px;
     background-color: black;
 }
 
-.voice-btn{
+.voice-btn {
     color: (--inverse) !important;
 }
 
-.hljs{
+.hljs {
     border: 1px solid var(--input-bg) !important;
+}
+
+.loader {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    height: 20px;
+}
+
+.loader span {
+    width: 8px;
+    height: 8px;
+    background-color: var(--text-color);
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.loader span:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.loader span:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+.loader span:nth-child(3) {
+    animation-delay: 0;
+}
+
+@keyframes bounce {
+
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+}
+
+.assistant-chat{
+    display: flex !important;
+    justify-content: center !important;
+    width: 92%;
+}
+
+.user-chat{
+    display: flex !important;
+    justify-content: flex-end !important;
+    width: 50%;
+    padding-right: 30px;
+    margin-bottom: 20px;
+}
+
+.credits{
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
 }

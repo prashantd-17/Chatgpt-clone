@@ -50,6 +50,7 @@ export class ChatWindowComponent implements OnInit, AfterViewChecked {
   formattedResponse: SafeHtml = '';
   chatTitle: string = '';
   allChats: any = {};
+  isLoading:boolean = false;
 
   constructor(
     private openAiChatService: OpenaiChatService,
@@ -101,6 +102,7 @@ export class ChatWindowComponent implements OnInit, AfterViewChecked {
     this.chatHistory.push({id : 'chat-' + Date.now() , role: 'user', content: this.userPrompt });
     this.saveHistory();
 
+    this.isLoading = true;
     puter.ai.chat(this.userPrompt).then((response: any) => {
       const aiResponse = response?.message?.content || 'No response';
       const sanitized = this.sanitizeMarkdown(aiResponse);
@@ -113,6 +115,7 @@ export class ChatWindowComponent implements OnInit, AfterViewChecked {
           .then((titleRes: any) => {
             this.chatTitle = titleRes?.message?.content || 'ChatGPTClone';
             this.titleService.setTitle(this.chatTitle);
+            this.isLoading = false
             console.log('=========', this.chatTitle);
           });
       }
@@ -123,6 +126,7 @@ export class ChatWindowComponent implements OnInit, AfterViewChecked {
         htmlContent: sanitized,
         title: this.chatTitle.trim(),
       });
+      this.isLoading = false;
 
       this.saveHistory();
     });

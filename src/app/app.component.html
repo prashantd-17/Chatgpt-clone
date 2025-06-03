@@ -1,13 +1,9 @@
-<div class="d-flex ht-100">
-    <div class="w-18">
-        <app-sidenav></app-sidenav>
-    </div>
-    <div class="w-85 d-flex flex-col h-100">
-        <app-topnav></app-topnav>
-        <div class="grow d-flex aic jcc w-100">
-        <app-chat-window class="d-block w-100"></app-chat-window>
-        </div>
-    </div>
-    <button (click)="toggleTheme()">Theme</button>
-   
+<div class="main-container">
+  <div class="sidenav" [ngClass]="{ 'collapsed': stateService.collapsed()}">
+    <app-sidenav></app-sidenav>
+  </div>
+  <div>
+    <app-topnav></app-topnav>
+    <app-chat-window></app-chat-window>
+  </div>
 </div>

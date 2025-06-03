@@ -202,3 +202,11 @@ body {
   scrollbar-width: thin;           
   scrollbar-color: #888 transparent;    
 }
+
+.toggle-btn{
+    border: none;
+    background-color: transparent;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+}

@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, signal } from '@angular/core';
+import { EventManager } from '@angular/platform-browser';
+import { StateServiceService } from '../../state-service.service';
 interface ChatSidebarItem {
   chatId: string;
   title: string;
@@ -15,6 +17,9 @@ export class SidenavComponent implements OnInit {
 
   allChats:any = {}
   sidebarChats: { [group: string]: ChatSidebarItem[] } = {};
+
+
+  constructor(public stateService:StateServiceService){}
 
   ngOnInit(){
     this.allChats = localStorage.getItem('allChats');
@@ -60,6 +65,9 @@ for (const chatId in this.allChats) {
   if (diffDays === 0) return 'Today';
   if (diffDays === 1) return 'Yesterday';
   return date.toLocaleDateString(); // or format as needed
+}
+
+toggleSidenav(){
 }
 
 

@@ -31,3 +31,32 @@
   border: none;
   font-size: 13px;
 }
+
+.profile-picture {
+  padding: 7px;
+  border-radius: 50px;
+  animation: elegantRGB 5s ease infinite;
+  background: linear-gradient(135deg, #ff6ec4, #7873f5, #66ffff, #ffcc70);
+  background-size: 300% 300%;
+}
+
+/* Keyframes */
+@keyframes elegantRGB {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.theme-icon{
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  color: var(--text-color);
+}
