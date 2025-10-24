@@ -97,56 +97,60 @@ export class ChatWindowComponent implements OnInit, AfterViewChecked {
   }
 
   sendPrompt() {
-    if (!this.userPrompt.trim()) return;
+    // if (!this.userPrompt.trim()) return;
 
-    this.chatHistory.push({id : 'chat-' + Date.now() , role: 'user', content: this.userPrompt });
-    this.saveHistory();
+    // this.chatHistory.push({id : 'chat-' + Date.now() , role: 'user', content: this.userPrompt });
+    // this.saveHistory();
 
-    this.isLoading = true;
-    puter.ai.chat(this.userPrompt).then((response: any) => {
-      const aiResponse = response?.message?.content || 'No response';
-      const sanitized = this.sanitizeMarkdown(aiResponse);
-
-      if (this.chatTitle === '' && response) {
-        puter.ai
-          .chat(
-            `Summarize this in 5 words or less: ${response?.message?.content}`
-          )
-          .then((titleRes: any) => {
-            this.chatTitle = titleRes?.message?.content || 'ChatGPTClone';
-            this.titleService.setTitle(this.chatTitle);
-            this.isLoading = false
-            console.log('=========', this.chatTitle);
-          });
-      }
-      this.chatHistory.push({
-        id : 'chat-' + Date.now(),
-        role: 'assistant',
-        content: aiResponse,
-        htmlContent: sanitized,
-        title: this.chatTitle.trim(),
-      });
-      this.isLoading = false;
-
-      this.saveHistory();
-    });
-
-        // const body = {
-    //   model: 'gpt-3.5-turbo',
-    //   messages: [{ role: 'user', content: this.userPrompt.trim() }],
-    // };
-
-    // this.openAiChatService.postUserPrompt(body).subscribe((res: any) => {
-    //   const aiResponse = res.choices[0]?.message.content || 'No response';
+    // this.isLoading = true;
+    // puter.ai.chat(this.userPrompt).then((response: any) => {
+    //   const aiResponse = response?.message?.content || 'No response';
     //   const sanitized = this.sanitizeMarkdown(aiResponse);
 
-    //   // Add assistant response with both raw and sanitized content
+    //   if (this.chatTitle === '' && response) {
+    //     puter.ai
+    //       .chat(
+    //         `Summarize this in 5 words or less: ${response?.message?.content}`
+    //       )
+    //       .then((titleRes: any) => {
+    //         this.chatTitle = titleRes?.message?.content || 'ChatGPTClone';
+    //         this.titleService.setTitle(this.chatTitle);
+    //         this.isLoading = false
+    //         console.log('=========', this.chatTitle);
+    //       });
+    //   }
     //   this.chatHistory.push({
+    //     id : 'chat-' + Date.now(),
     //     role: 'assistant',
     //     content: aiResponse,
-    //     htmlContent: sanitized
+    //     htmlContent: sanitized,
+    //     title: this.chatTitle.trim(),
     //   });
+    //   this.isLoading = false;
+
+    //   this.saveHistory();
     // });
+
+        const body = {
+      model: 'gpt-5',
+      messages: [{ role: 'user', content: this.userPrompt.trim() }],
+    };
+    this.isLoading = true;
+
+    this.openAiChatService.postUserPrompt(body).subscribe((res: any) => {
+      const aiResponse = res.choices[0]?.message.content || 'No response';
+      const sanitized = this.sanitizeMarkdown(aiResponse);
+
+      // Add assistant response with both raw and sanitized content
+      this.chatHistory.push({
+        role: 'assistant',
+        content: aiResponse,
+        htmlContent: sanitized
+      });
+    });
+   this.isLoading = false;
+
+      this.saveHistory();
 
     this.userPrompt = '';
   }
