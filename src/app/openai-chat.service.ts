@@ -8,8 +8,11 @@ export class OpenaiChatService {
 
   constructor(private http:HttpClient) { }
 
-  apiUrl:string = "https://openrouter.ai/api/v1/chat/completions";
-  apiKey:string = "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";
+  // apiUrl:string = "https://openrouter.ai/api/v1/chat/completions";
+  // apiKey:string = "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";
+
+    apiUrl:string = "https://api.perplexity.ai/chat/completions";
+  apiKey:string = "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";
 
   headers = new HttpHeaders({
       'Content-Type': 'application/json',
