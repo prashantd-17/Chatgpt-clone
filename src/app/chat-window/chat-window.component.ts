@@ -150,7 +150,7 @@ export class ChatWindowComponent implements OnInit, AfterViewChecked {
     });
    this.isLoading = false;
 
-      this.saveHistory();
+      // this.saveHistory();
 
     this.userPrompt = '';
   }
